@@ -1,130 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blaty & Co. Cleaning</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blaty & Co Cleaning</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f4efe9;
+      color: #3a2f2a;
+    }
 
-<style>
-body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: #ffffff;
-color: #222;
-}
+    header {
+      background: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511') center/cover no-repeat;
+      height: 95vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
 
-header {
-background: #0f0f0f;
-color: white;
-padding: 25px;
-text-align: center;
-}
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
 
-header h1 {
-margin: 0;
-font-size: 34px;
-letter-spacing: 1px;
-}
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+    }
 
-header p {
-margin-top: 5px;
-color: #aaa;
-}
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      margin-bottom: 10px;
+    }
 
-.hero {
-background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover;
-color: white;
-text-align: center;
-padding: 100px 20px;
-}
+    .tagline {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
 
-.hero h2 {
-font-size: 36px;
-margin-bottom: 10px;
-}
+    .btn {
+      background: linear-gradient(135deg, #c7a17a, #a67c52);
+      color: white;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-.hero p {
-font-size: 18px;
-}
+    section {
+      padding: 70px 20px;
+      text-align: center;
+    }
 
-.btn {
-display: inline-block;
-margin-top: 20px;
-padding: 14px 25px;
-background: white;
-color: black;
-text-decoration: none;
-font-weight: bold;
-border-radius: 6px;
-}
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
 
-.section {
-padding: 60px 20px;
-text-align: center;
-}
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
 
-.cards {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 20px;
-}
+    .service {
+      background: #fff;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
 
-.card {
-width: 250px;
-padding: 20px;
-background: #f7f7f7;
-border-radius: 10px;
-}
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 40px;
+    }
 
-footer {
-background: #0f0f0f;
-color: white;
-text-align: center;
-padding: 20px;
-font-size: 14px;
-}
-</style>
+    .before-after img {
+      width: 100%;
+      border-radius: 12px;
+    }
 
+    .testimonial {
+      font-style: italic;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    footer {
+      background: #efe7df;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 30px auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    input, textarea {
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    a {
+      color: #a67c52;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    @media(max-width: 768px) {
+      .before-after {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-<h1>Blaty & Co. Cleaning</h1>
-<p>Luxury Cleaning Services in Florida & Pennsylvania</p>
+  <div class="hero">
+    <h1>Blaty & Co Cleaning</h1>
+    <p class="tagline">Elevated Cleaning. Effortless Living.</p>
+    <button class="btn" onclick="document.querySelector('footer').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+  </div>
 </header>
 
-<div class="hero">
-<h2>Clean Spaces. Clear Mind.</h2>
-<p>Premium residential & deep cleaning services you can trust.</p>
-<a class="btn" href="mailto:blatyco.cleaning@email.com">Book a Cleaning</a>
-</div>
+<section>
+  <h2>Our Services</h2>
+  <p>Every detail handled. Every space transformed.</p>
+  <div class="services">
+    <div class="service">Standard Home Cleaning</div>
+    <div class="service">Deep Cleaning</div>
+    <div class="service">Move-In / Move-Out Cleaning</div>
+    <div class="service">Office & Commercial Cleaning</div>
+    <div class="service">Post-Construction Cleaning</div>
+  </div>
+</section>
 
-<div class="section">
-<h2>Our Services</h2>
-
-<div class="cards">
-<div class="card">
-<h3>Home Cleaning</h3>
-<p>Weekly or one-time cleaning for a spotless home.</p>
-</div>
-
-<div class="card">
-<h3>Deep Cleaning</h3>
-<p>Detailed top-to-bottom cleaning for a fresh reset.</p>
-</div>
-
-<div class="card">
-<h3>Move In / Out</h3>
-<p>Perfect cleaning for landlords, tenants, and moves.</p>
-</div>
-</div>
-</div>
+<section>
+  <h2>Why Choose Blaty & Co.</h2>
+  <div class="before-after">
+    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="before">
+    <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4" alt="after">
+  </div>
+  <p class="testimonial">"My house has never looked this spotless. Blaty & Co is unmatched."</p>
+</section>
 
 <footer>
-Blaty & Co. Cleaning © 2026 | Serving Florida & Pennsylvania | Available 24/7
+  <h2>Contact Us</h2>
+  <p>Serving South Jersey & Philadelphia</p>
+
+  <div class="contact-info">
+    <p>📞 <a href="tel:16096131236">609-613-1236</a> | <a href="tel:16096352006">609-635-2006</a></p>
+    <p>📧 info@blatycleaning.com</p>
+  </div>
+
+  <form action="https://formsubmit.co/info@blatycleaning.com" method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="service" placeholder="Service Needed" required>
+    <input type="text" name="address" placeholder="Address">
+    <textarea name="message" placeholder="Message"></textarea>
+
+    <input type="hidden" name="_subject" value="New Cleaning Quote Request">
+    <input type="hidden" name="_captcha" value="false">
+
+    <button class="btn">Request a Quote</button>
+  </form>
 </footer>
 
 </body>
