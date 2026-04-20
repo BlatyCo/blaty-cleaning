@@ -1,0 +1,306 @@
+/* --- Global Styles --- */
+:root {
+--primary-gold: #c29d6d; /* Main accent color */
+--hover-gold: #a6845c;
+--text-dark: #665c52;
+--text-medium: #8a8176;
+--text-white: #ffffff;
+--bg-cream: #fbf9f6;
+--form-bg: rgba(255, 255, 255, 0.7);
+--font-serif: 'Playfair Display', serif; /* Simulates the luxury font */
+--font-sans: 'Cormorant Garamond', sans-serif; /* For smaller titles */
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: var(--font-sans);
+background-color: var(--bg-cream);
+color: var(--text-medium);
+line-height: 1.6;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--text-dark); }
+p { font-weight: 400; color: var(--text-medium); }
+.accent-text { color: var(--primary-gold); }
+.section-title { font-family: var(--font-serif); font-size: 1.5rem; color: var(--text-dark); border-bottom: 1px solid #e1e1e1; margin-bottom: 1rem; position: relative; display: inline-block; }
+.section-title::after { content: ''; display: block; width: 100%; height: 1px; background-color: #d8c3ae; margin-top: 5px; }
+
+/* Global Buttons */
+.cta-button {
+border: none;
+padding: 10px 25px;
+cursor: pointer;
+font-family: var(--font-serif);
+font-size: 0.9rem;
+text-transform: capitalize;
+transition: background-color 0.3s ease;
+}
+
+.cta-button.gold {
+background-color: var(--primary-gold);
+color: var(--text-white);
+}
+
+.cta-button.gold:hover {
+background-color: var(--hover-gold);
+}
+
+/* --- Header Section --- */
+.main-header {
+text-align: center;
+padding: 40px 20px;
+margin-top: -1px; /* Align with border-top */
+border-top: 1px solid #d8c3ae;
+}
+
+.main-header h1 { font-size: 2.2rem; }
+.main-header h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 2rem; color: var(--text-medium); }
+
+.main-header .tagline {
+margin-bottom: 1.5rem;
+}
+.main-header h3 { font-size: 1.6rem; font-style: italic; }
+.main-header p { font-size: 0.85rem; }
+
+/* --- Hero Spacer (Placeholder Layout) --- */
+.hero-spacer {
+height: 300px; /* Temporary height */
+padding: 20px 40px;
+}
+.living-room-layout {
+display: flex;
+gap: 20px;
+height: 100%;
+}
+.console-area, .couch-area {
+background-color: #e6e0d9; /* Neutral grey-brown placeholder */
+border-radius: 3px;
+border: 1px solid rgba(0,0,0,0.05);
+}
+.console-area { flex: 1; }
+.couch-area { flex: 2; }
+
+/* --- Services Section --- */
+.services {
+text-align: center;
+padding: 60px 20px;
+}
+
+.services .section-title p { margin-top: 0.5rem; font-size: 0.8rem; text-transform: none; color: var(--text-medium); }
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+gap: 30px;
+max-width: 1100px;
+margin: 3rem auto 0;
+padding: 0 10px;
+}
+
+.service-item {
+text-align: center;
+padding: 20px;
+/* Simulate gold icons */
+color: var(--primary-gold);
+}
+
+.service-item i {
+font-size: 2.5rem;
+display: block;
+margin-bottom: 15px;
+font-style: normal;
+color: var(--primary-gold);
+}
+
+/* Very basic icon approximations using font and border (use real icons) */
+.icon-home::before { content: '🏠'; }
+.icon-deep-clean::before { content: '🫧'; }
+.icon-calendar::before { content: '📅'; }
+.icon-building::before { content: '🏢'; }
+.icon-construction::before { content: '🏗️'; }
+
+.service-item h4 {
+font-family: var(--font-sans);
+font-size: 0.85rem;
+color: var(--text-dark);
+margin-top: 10px;
+}
+
+/* --- Why Choose Section --- */
+.why-choose {
+text-align: center;
+padding: 40px 20px 60px;
+}
+
+.comparison-container {
+display: flex;
+justify-content: center;
+gap: 20px;
+max-width: 1100px;
+margin: 3rem auto 0;
+flex-wrap: wrap;
+}
+
+.comparison-card {
+position: relative;
+width: calc(50% - 10px);
+border-radius: 4px;
+overflow: hidden;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.comparison-card img {
+width: 100%;
+height: auto;
+display: block;
+}
+
+.card-label {
+position: absolute;
+top: 10px;
+left: 10px;
+color: var(--text-white);
+font-size: 1.1rem;
+font-style: italic;
+font-family: var(--font-serif);
+background-color: rgba(166, 132, 92, 0.7); /* Muted gold bg */
+padding: 2px 10px;
+border-radius: 2px;
+}
+
+/* --- Testimonial Section --- */
+.testimonial {
+text-align: center;
+padding: 60px 20px 40px;
+background-color: var(--bg-cream); /* Matching global background */
+}
+
+.testimonial-stars {
+color: var(--primary-gold);
+font-size: 1.3rem;
+margin: 1.5rem 0 1rem;
+}
+
+.testimonial-quote {
+font-family: var(--font-serif);
+font-size: 1rem;
+font-style: italic;
+color: var(--text-dark);
+max-width: 600px;
+margin: 0 auto;
+}
+
+.testimonial-quote cite {
+display: block;
+margin-top: 0.8rem;
+color: var(--text-medium);
+font-size: 0.8rem;
+font-style: normal;
+}
+
+/* --- Contact Section (The intricate part) --- */
+.contact-section {
+position: relative;
+padding: 80px 20px 120px;
+text-align: center;
+border-top: 1px solid #d8c3ae;
+background:
+radial-gradient(circle at center, rgba(234, 219, 196, 0.2) 0%, rgba(251, 249, 246, 0) 70%),
+var(--bg-cream);
+}
+
+/* White Title variation */
+.contact-section .section-title.white {
+color: var(--text-dark);
+border-bottom: none;
+font-size: 1.1rem;
+margin-bottom: 2rem;
+}
+.contact-section .section-title.white::after { display: none; }
+
+.contact-details {
+margin-bottom: 1.5rem;
+}
+.contact-details p {
+font-size: 0.85rem;
+margin-bottom: 0.3rem;
+color: var(--text-dark);
+}
+.contact-details i { margin-right: 5px; color: var(--primary-gold); }
+
+/* The main 'Send' button above the form */
+.main-send {
+margin-top: -10px;
+margin-bottom: 3rem;
+}
+
+/* Contact Form Layout */
+.contact-form {
+max-width: 650px;
+margin: 0 auto;
+padding: 20px;
+}
+
+.form-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
+margin-bottom: 20px;
+}
+
+/* Stylized form fields */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+padding: 12px;
+border: 1px solid #e1e1e1;
+background-color: var(--form-bg);
+border-radius: 2px;
+font-family: var(--font-sans);
+font-size: 0.8rem;
+color: #444;
+}
+
+.contact-form textarea {
+grid-column: span 2;
+resize: vertical;
+}
+
+/* Custom styling for the dropdown (simplified) */
+.contact-form select {
+appearance: none;
+-webkit-appearance: none;
+background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238a8176' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+background-repeat: no-repeat;
+background-position: right 10px center;
+background-size: 12px;
+}
+
+.contact-form input::placeholder,
+.contact-form select,
+.contact-form textarea::placeholder {
+color: #b1a99f;
+}
+
+/* Form Send button (the same style as above) */
+.contact-form button[type="submit"] {
+position: relative;
+top: -10px; /* Aligns with the other send button's position */
+}
+
+/* --- Responsiveness (Very basic) --- */
+@media (max-width: 768px) {
+.living-room-layout { flex-direction: column; height: auto; }
+.hero-spacer { height: auto; padding: 10px; }
+.console-area, .couch-area { height: 200px; width: 100%; }
+.services-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.comparison-card { width: 100%; }
+.form-grid { grid-template-columns: 1fr; }
+.contact-form textarea { grid-column: 1; }
+}
